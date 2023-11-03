@@ -45,6 +45,7 @@ CMD pg_ctl start -D /var/lib/postgresql/data \
     && nginx \
     && python3 manage.py migrate \
     && python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(username='admin').exists() or User.objects.create_superuser('admin', 'admin@example.com', 'admin')" \
+    && python manage.py collectstatic \
     && gunicorn -b 0.0.0.0:8000 pr.wsgi:application
 
 EXPOSE 80
