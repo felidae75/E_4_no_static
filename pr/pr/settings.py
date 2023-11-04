@@ -26,11 +26,31 @@ SECRET_KEY = 'django-insecure-rz_#hnz4s%@wz*w2boql(2)5tm$021bft8pv#64dk=@^ygm2vn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 1
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+                'http://localhost',
+                'http://127.0.0.1',
+                'http://localhost:8000',
+                'http://127.0.0.1:8000',
+                'http://localhost:1337',
+                'http://127.0.0.1:1337',
+                'http://0.0.0.0:8000',
+                'http://0.0.0.0:1337',
+                'http://127.0.0.1:80',
+                'http://localhost:80',
+                '*',
+    ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:80',
+    'http://localhost:80',
+    'http://localhost:1337',
+    'http://127.0.0.1:1337',
+    'http://0.0.0.0:8000',
+    'http://0.0.0.0:1337',
+    'http://localhost',
+    'http://127.0.0.1:80',
 ]
 
 # Application definition
@@ -130,7 +150,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "/static/"
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
